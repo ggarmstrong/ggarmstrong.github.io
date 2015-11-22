@@ -1,0 +1,64 @@
+//main: ../../_main.styl
+
+body
+  theme(background-color, 'primary')
+  overflow-y scroll
+body.menu-open
+  overflow-y hidden
+  @media $medium
+    overflow-y initial
+.app-nav-wrap
+  theme(background-color, 'primary')
+  width 200vw
+  min-height 100%
+  transform translateX(-100vw)
+  transition transform .2s ease-in, background-color $theme-transition
+  display flex
+  flex-direction row
+  overflow hidden
+  &:before
+    content ""
+    position absolute
+    top 0
+    left 0
+    height 9999em
+    width 100vw
+    theme(background-color, 'primary-dark')
+    transition background-color $theme-transition
+  .menu-open &
+    transform translateX(0)
+  @media $medium
+    width calc(100% + 400px)
+    transform translateX(-400px)
+    &:before
+      width 400px
+    .menu-open &
+      transform translateX(0)
+.app-wrap
+  width 100vw
+  margin-top 17vh
+  @media $medium
+    margin-top 20vh
+#app-container
+  width 100%
+  min-height 80vh
+.container
+  padding-left 4%
+  padding-right 4%
+  margin 0 auto
+  width 100%
+  max-width 1300px
+  @media $medium
+    padding-left 7%
+    padding-right 7%
+.header
+  padding 0 0 6%
+  h2
+    max-width 25em
+  @media $medium
+    padding 0 0 4%
+.content
+  padding-top 6%
+  padding-bottom 6%
+  theme(background-color, 'secondary-light')
+  transition background-color $theme-transition

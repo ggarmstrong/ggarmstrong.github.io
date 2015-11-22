@@ -1,0 +1,28 @@
+// main: ../_main.styl
+
+$themes = {}
+
+for num in (0..9)
+  $title = 'theme-' + num
+  $hue = random(80, 355)
+  $comphue = $hue - 180
+  $comphue-hsla = hsla($comphue, 15%, 70%, 1)
+  $comphue-sepia = mix(#ff0, $comphue-hsla, 5%)
+  $comphue-light = lighten($comphue-sepia, 50%)
+  $swatch = {}
+  $swatch[$title] = {
+    primary: hsla($hue, 30%, 50%, 1),
+    primary-dark: hsla($hue, 50%, 30%, 1),
+    secondary: $comphue-sepia,
+    secondary-light: $comphue-light
+  }
+  merge($themes, $swatch)
+
+theme($property, $value, $modify = noop)
+  apply($property, $value, $theme, $modify)
+    if $value in $theme
+      $themeValue = $theme[$value]
+      {$property} $modify($themeValue)
+  for $name, $theme in $themes
+    .{$name} &
+      apply($property, $value, $theme, $modify)

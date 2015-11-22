@@ -1,0 +1,58 @@
+// main: ../../_main.styl
+
+.theme-switcher
+  display inline-block
+  vertical-align middle
+  width 40px
+  height 40px
+  position relative
+  margin 0 20px 0 0
+  cursor pointer
+.theme-switcher--pallette
+  position absolute
+  top 0
+  left 50%
+  margin-left -5px
+  width 10px
+  height 40px
+  transform-origin 50% 100%
+  border-width 1px
+  border-style solid
+  outline 1px solid transparent;
+  theme(background-color, 'primary')
+  theme(border-color, 'primary')
+  transition transform .35s ease-out, background $theme-transition, border-color $theme-transition
+  .open &
+    pointer-events none
+  &:nth-of-type(1)
+    transform rotate(-30deg)
+    .open &
+      transform rotate(-3deg)
+  &:nth-of-type(2)
+    transform rotate(-10deg)
+    .open &
+      transform rotate(-1deg)
+  &:nth-of-type(3)
+    transform rotate(10deg)
+    .open &
+      transform rotate(1deg)
+  &:nth-of-type(4)
+    transform rotate(30deg)
+    .open &
+      transform rotate(3deg)
+.theme-switcher--pallette-svg
+  fill none
+  stroke none
+  border 0
+  outline 0
+  transform translateZ(0)
+.theme-switcher--pallette-section
+  stroke none
+  &:nth-of-type(1)
+    fill rgba(255,255,255,0.15)
+  &:nth-of-type(2)
+    fill rgba(255,255,255,0.3)
+  &:nth-of-type(3)
+    fill rgba(255,255,255,0.5)
+  &:nth-of-type(4)
+    fill rgba(255,255,255,0.7)

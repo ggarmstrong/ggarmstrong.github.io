@@ -1,0 +1,106 @@
+//main: ../../_main.styl
+
+.avatar--floor
+  theme(fill, 'secondary', @($theme) {
+    darken(saturate($theme, 3), 3)
+  })
+  transition fill $theme-transition
+.avatar--desk-top
+  fill #b88532
+.avatar--desk-edge
+  fill #9c7231
+.avatar--leg-front
+  fill #8c6324
+.avatar--leg-side
+  fill #7d5e2e
+.avatar--monitor-base
+  fill #000
+.avatar--monitor-screen
+  fill #252525
+  stroke-width 3
+  stroke #000
+.avatar--laptop-screen
+  fill #252525
+  stroke-width 3
+  stroke #000
+.avatar--laptop-base
+  fill #bbb
+  stroke-width 2
+  stroke #bbb
+.avatar--laptop-base-edge
+  stroke-width 5
+  stroke #999
+.avatar--laptop-keys polygon
+  fill #444
+.avatar--laptop-pad
+  fill #999
+.avatar--ball-1
+  theme(fill, 'secondary', @($theme) {
+    darken(saturate($theme, 15), 20)
+  })
+  transition fill $theme-transition
+  animation bounce 1.9s linear infinite alternate-reverse
+.avatar--ball-2
+  theme(fill, 'primary')
+  transition fill $theme-transition
+  animation bounce 1.75s 0.5s linear infinite alternate
+.avatar--ball-3
+  theme(fill, 'secondary')
+  transition fill $theme-transition
+  animation bounce 1.65s 1.5s linear infinite alternate-reverse
+@keyframes bounce
+  n = 1
+  for i in 0..5
+    {5% * i}
+      transform translate((i * 7)px, (-40 * sin(PI/n))px)
+    n += 0.2
+  for i in 6..10
+    {5% * i}
+      transform translate((i * 7)px, (-40 * sin(PI/n))px)
+    n -= 0.2
+  for i in 11..15
+    {5% * i}
+      transform translate((i * 7)px, (-40 * sin(PI/n))px)
+    n += 0.2
+  for i in 16..20
+    {5% * i}
+      transform translate((i * 7)px, (-40 * sin(PI/n))px)
+    n -= 0.2
+.avatar--hair
+  fill #5d4310
+.avatar--face-left
+  fill #ecd79c
+.avatar--face-right
+  fill #e3cd91
+.avatar--eye
+  fill #fff
+.avatar--eyelid
+  fill #d4bc7d
+.avatar--iris
+  fill #13c890
+.avatar--pupil
+  fill #222
+.avatar--mouth
+  fill #fff
+.avatar--neck-left
+  fill #ecd79c
+.avatar--neck-right
+  fill #d7c281
+.avatar--shirt-right
+  theme(fill, 'secondary', @($theme) {
+    darken(saturate($theme, 22), 27)
+  })
+  transition fill $theme-transition
+.avatar--shirt-left
+  theme(fill, 'secondary', @($theme) {
+    darken(saturate($theme, 17), 22)
+  })
+  transition fill $theme-transition
+.avatar--shirt-collar
+  theme(fill, 'secondary', @($theme) {
+    darken(saturate($theme, 12), 12)
+  })
+  transition fill $theme-transition
+.avatar--button
+  theme(fill, 'secondary')
+  transition fill $theme-transition

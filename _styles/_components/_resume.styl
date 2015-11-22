@@ -1,0 +1,78 @@
+// main: ../../_main.styl
+.resume
+  .button
+    padding-right 1.2em
+    &:after
+      display none
+  h3
+    margin-top 2em
+.resume--intro-title
+  h3
+    margin-bottom 0
+  h4
+    margin-top 0
+.resume--intro-details
+  @media $medium
+    display flex
+    flex-flow row nowrap
+    justify-content space-between
+    align-items flex-start
+.resume--intro-contact
+  font-style italic
+  margin 0
+  @media $medium
+    flex 1 1 (100% / 3)
+    padding-right 1em
+.resume--intro-summary
+  @media $medium
+    flex 2 2 ((100% / 3) * 2)
+    margin-top 0
+    padding-left 1em
+.resume--skills
+  @media $medium
+    display flex
+    flex-flow row wrap
+    justify-content space-between
+    align-items flex-start
+    h3
+      flex 3 3 100%
+  h3
+    margin-bottom 0.5em
+  h4
+    margin-top 0
+    margin-bottom 0.1em
+    margin-top 0
+    &:not(:first-of-type)
+      margin-top 1.5em
+  li
+    padding-top 0.15em
+    padding-left 0.65em
+    margin-top 0.5em
+    margin-bottom 0.5em
+    border-style dotted
+    border-color rgba(0,0,0,0.5)
+    border-width 0 0 0 1px
+.resume--skills-col
+  @media $medium
+    flex 1 1 50%
+    :nth-of-type(odd)
+      padding-right 1em
+    &:nth-of-type(even)
+      padding-left 1em
+.resume--experience-item
+  margin 1em 0 1.5em
+  @media $medium
+    display flex
+    flex-flow row nowrap
+    justify-content space-between
+    align-items flex-start
+.resume--experience-meta
+  strong, em
+    display block
+  @media $medium
+    flex 1 1 (100% / 3)
+    padding-right 1em
+.resume--experience-summary
+  @media $medium
+    flex 3 3 ((100% / 3) * 2)
+    padding-left 1em
