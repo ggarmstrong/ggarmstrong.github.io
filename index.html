@@ -1139,8 +1139,8 @@
                       ].join(" ")
                     },
                       image.video ? m("video[autoplay][loop]",
-                        m("source[type=video/webm]", { src: image.src + ".webm" }),
-                        m("source[type=video/mp4]", { src: image.src + ".mp4" })
+                        m("source[type=video/mp4]", { src: image.src + ".mp4" }),
+                        m("source[type=video/webm]", { src: image.src + ".webm" })
                       ) : m("img", { src: image.src })
                     )
                   ];
