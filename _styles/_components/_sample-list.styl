@@ -70,6 +70,8 @@
 .sample-list--summary
   margin-top 0
   color rgba(0,0,0,0.6)
+  .sample &
+    color rgba(0,0,0,0.65)
 .sample-list--tags
   font-size 0.8em
   margin-top 1em
@@ -84,9 +86,13 @@
     display inline-block
     padding 0 0.5em 0 0
     theme(color, 'secondary', @($theme) {
-      darken($theme, 10)
+      darken($theme, 15)
     })
     transition color $theme-transition
+    .sample &
+      theme(color, 'secondary', @($theme) {
+        darken($theme, 20)
+      })
     &:not(:last-child):after
       content ","
     @media $medium

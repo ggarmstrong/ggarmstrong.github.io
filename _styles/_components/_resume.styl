@@ -11,6 +11,7 @@
     margin-bottom 0
   h4
     margin-top 0
+    margin-bottom 1em
 .resume--intro-details
   @media $medium
     display flex
@@ -42,8 +43,8 @@
     margin-top 0
     margin-bottom 0.1em
     margin-top 0
-    &:not(:first-of-type)
-      margin-top 1.5em
+  ul
+    margin-bottom 1.5em
   li
     padding-top 0.15em
     padding-left 0.65em
@@ -67,12 +68,16 @@
     justify-content space-between
     align-items flex-start
 .resume--experience-meta
-  strong, em
+  h4
+    margin 0
+  span
     display block
   @media $medium
     flex 1 1 (100% / 3)
     padding-right 1em
 .resume--experience-summary
+  margin-top 1em
   @media $medium
+    margin-top 0.15em
     flex 3 3 ((100% / 3) * 2)
     padding-left 1em
