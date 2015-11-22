@@ -19,7 +19,9 @@
       element.onclick = function(e) {
         e.preventDefault();
         var href = element.getAttribute("href"),
-            nav = document.querySelector("#main-nav--bar");
+            nav = document.querySelector("#main-nav--bar"),
+            app = document.getElementById("app-container");
+        app.focus();
         if(href === "/") {
           nav.className = "root";
         } else {
@@ -303,7 +305,7 @@
       ],
       "slug": "autostraddle-lezbackpack-get-out-there",
       "tags": ["Graphic Design", "Adobe Illustrator", "Typography", "Vector Illustration", "Logo Design"]
-    },    
+    },
     {
       "name": "Inlivo App",
       "summary": "I created an in-browser prototype for a healthy living app.",
