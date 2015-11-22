@@ -19,7 +19,9 @@
       element.onclick = function(e) {
         e.preventDefault();
         var href = element.getAttribute("href"),
-            nav = document.querySelector("#main-nav--bar");
+            nav = document.querySelector("#main-nav--bar"),
+            app = document.getElementById("app-container");
+        app.focus();
         if(href === "/") {
           nav.className = "root";
         } else {
@@ -888,7 +890,7 @@
     	),
       //app container
       m(".app-wrap",
-        m("#app-container")
+        m("#app-container[tabindex=-1]")
       )
     )
   ]);
@@ -1294,7 +1296,8 @@
 //switch themes
 (function() {
 	var themeswitcher = document.querySelector(".theme-switcher"),
-			themes = new Array(10);
+			themes = new Array(10),
+      app = document.getElementById("app-container");
 	for(var i=0; i < themes.length; i++) {
 		themes[i] = i.toString();
 	}
@@ -1313,6 +1316,7 @@
 		}, 500);
 	}
 	switchTheme();
+  app.focus();
 	themeswitcher.addEventListener("click", switchTheme);
 })();
 
