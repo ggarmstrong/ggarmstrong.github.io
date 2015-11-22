@@ -25,7 +25,7 @@
         } else {
           nav.className = "";
         }
-        document.body.scroll(0,0);
+        window.scroll(0,0);
         m.route(href);
         if (document.querySelector("body.menu-open")) {
           document.body.classList.remove("menu-open");
@@ -1321,7 +1321,7 @@
   var toggler = document.querySelector(".main-nav--toggle-open");
   toggler.addEventListener("click", function(e) {
     e.preventDefault();
-    document.body.scroll(0,0);
+    window.scroll(0,0);
     document.body.classList.add("menu-open");
   })
 })();
