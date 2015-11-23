@@ -1,14 +1,46 @@
 // main: ../../_main.styl
 
 .sample--intro
-  padding-top 6%
-  padding-bottom 6%
+  position relative
+  padding-top 5%
+  padding-bottom 5%
   theme(background-color, 'secondary-light', @($theme) {
     darken(saturate($theme, 3), 6)
   })
   transition background-color $theme-transition
   .sample-list--item
     padding 0
+  &:before
+    content ""
+    position absolute
+    top 100%
+    left 50%
+    margin-top -30px
+    margin-left -28px
+    width 56px
+    height 56px
+    display block
+    border-radius 100%
+    theme(background-color, 'secondary-light', @($theme) {
+      darken(saturate($theme, 3), 6)
+    })
+    transition background-color $theme-transition
+  &:after
+    content ""
+    display block
+    position absolute
+    top 100%
+    left 50%
+    width 16px
+    height 16px
+    margin-left -8px
+    margin-top -6px
+    border-style solid
+    border-width 0 4px 4px 0x
+    transform rotate(45deg)
+    transform-origin 50% 50%
+    border-radius 2px
+    border-color rgba(0,0,0,0.15)
   @media $medium
     .sample-list--image img
       margin-top 0

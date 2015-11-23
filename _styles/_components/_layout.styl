@@ -38,11 +38,11 @@ body.menu-open
   width 100vw
   margin-top 17vh
   @media $medium
-    margin-top 20vh
+    margin-top 15vh
 #app-container
   outline 0
   width 100%
-  min-height 80vh
+  min-height 85vh
 .container
   padding-left 4%
   padding-right 4%
@@ -53,13 +53,15 @@ body.menu-open
     padding-left 7%
     padding-right 7%
 .header
-  padding 0 0 6%
+  padding 0 0 8%
   h2
     max-width 25em
   @media $medium
     padding 0 0 4%
 .content
-  padding-top 6%
-  padding-bottom 6%
+  padding-top 10%
+  padding-bottom 5%
   theme(background-color, 'secondary-light')
   transition background-color $theme-transition
+  @media $medium
+    padding-top 5%
