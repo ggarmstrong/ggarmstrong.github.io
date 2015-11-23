@@ -374,6 +374,44 @@
       "tags": ["Front-End Web Development", "CSS/LESS", "HTML", "JS"]
     },
     {
+      "name": "Maximillian Jewellery",
+      "summary": "I designed a bitmap mockup of the landing page for a jeweller's website.",
+      "preview": "/images/maximillian-jewellery/maximillian-jewellery--preview.jpg",
+      "images": [
+        {
+          "size": "large",
+          "src": "/images/maximillian-jewellery/maximillian-jewellery--landing-page.jpg"
+        }
+      ],
+      "slug": "maximillian-jewellery",
+      "tags": ["Web Design", "Adobe Photoshop", "Bitmap Mockup", "Photo Editing"]
+    },
+    {
+      "name": "Ticket Science",
+      "summary": "I made an in-browser prototype for an online ticketing site.",
+      "preview": "/images/ticket-science/ticket-science--preview.jpg",
+      "images": [
+        {
+          "size": "medium-large",
+          "src": "/images/ticket-science/ticket-science--event.jpg"
+        },
+        {
+          "size": "medium-small",
+          "src": "/images/ticket-science/ticket-science--event-mobile.jpg"
+        },
+        {
+          "size": "medium",
+          "src": "/images/ticket-science/ticket-science--order.jpg"
+        },
+        {
+          "size": "medium",
+          "src": "/images/ticket-science/ticket-science--success.jpg"
+        }
+      ],
+      "slug": "ticket-science",
+      "tags": ["Web Design", "CSS/Stylus", "HTML", "JS", "SVG", "In-Browser Prototype", "Icon Design"]
+    },
+    {
       "name": "Breanne & Meghan's Wedding",
       "summary": "In May 2015, my sister married her best friend. I had the honour of creating the website, invitations and other print materials for the event.",
       "preview": "/images/bamf-wedding/bamf-wedding--preview.jpg",
@@ -438,44 +476,6 @@
       ],
       "slug": "travel-size-comedy",
       "tags": ["Logo Design", "Adobe Illustrator", "Typography", "Vector Illustration"]
-    },
-    {
-      "name": "Maximillian Jewellery",
-      "summary": "I designed a bitmap mockup of the landing page for a jeweller's website.",
-      "preview": "/images/maximillian-jewellery/maximillian-jewellery--preview.jpg",
-      "images": [
-        {
-          "size": "large",
-          "src": "/images/maximillian-jewellery/maximillian-jewellery--landing-page.jpg"
-        }
-      ],
-      "slug": "maximillian-jewellery",
-      "tags": ["Web Design", "Adobe Photoshop", "Bitmap Mockup", "Photo Editing"]
-    },
-    {
-      "name": "Ticket Science",
-      "summary": "I made an in-browser prototype for an online ticketing site.",
-      "preview": "/images/ticket-science/ticket-science--preview.jpg",
-      "images": [
-        {
-          "size": "medium-large",
-          "src": "/images/ticket-science/ticket-science--event.jpg"
-        },
-        {
-          "size": "medium-small",
-          "src": "/images/ticket-science/ticket-science--event-mobile.jpg"
-        },
-        {
-          "size": "medium",
-          "src": "/images/ticket-science/ticket-science--order.jpg"
-        },
-        {
-          "size": "medium",
-          "src": "/images/ticket-science/ticket-science--success.jpg"
-        }
-      ],
-      "slug": "ticket-science",
-      "tags": ["Web Design", "CSS/Stylus", "HTML", "JS", "SVG", "In-Browser Prototype", "Icon Design"]
     },
     {
       "name": "Clarksville Luxury Homes",
@@ -1112,7 +1112,8 @@
                     )
                   ];
                 })
-              )
+              ),
+              m("a.back-button[href=/work-samples]", { config: scrollRoute })              
             )
           )
         )
@@ -1242,7 +1243,8 @@
                   ),
                   m(".resume--experience-summary.small-text", "Over the years I've done freelance web development, web design and print design work.")
                 )
-              )
+              ),
+              m("a.back-button[href=/]", { config: scrollRoute })
             )
           )
         )
@@ -1312,17 +1314,6 @@
     togglers[i].addEventListener("click", function() {
       document.body.classList.remove("menu-open");
     });
-  }
-})();
-
-// add body class on load
-(function() {
-  var page = document.querySelector("#app-container > section").className,
-      nav = document.querySelector("#main-nav--bar");
-  if(page === "hero") {
-    nav.className = "root";
-  } else {
-    nav.className = "";
   }
 })();
 
