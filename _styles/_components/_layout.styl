@@ -1,8 +1,10 @@
 //main: ../../_main.styl
 
 body
-  theme(background-color, 'primary')
   overflow-y scroll
+  theme(background-color, 'primary')
+body:not(*:root)
+  overflow-x hidden
 body.menu-open
   overflow-y hidden
   @media $medium

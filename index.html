@@ -28,7 +28,7 @@
           nav.className = "";
         }
         m.route(href);
-        document.body.scrollTo(0,-1000);
+        setTimeout(document.body.scrollTop = 0, 1000);
         app.focus();
         if (document.querySelector("body.menu-open")) {
           document.body.classList.remove("menu-open");
@@ -592,7 +592,7 @@
       ],
       "slug": "websitesca-small-business-websites",
       "tags": ["Web Design", "Front-End Development", "CSS/LESS", "HTML", "JS", "WordPress", "Logo Design"]
-    },    
+    },
     {
       "name": "Travel Size Comedy",
       "summary": "I designed a series of logos for my friend's comedy tour.",
@@ -1295,7 +1295,7 @@
   var toggler = document.querySelector(".main-nav--toggle-open");
   toggler.addEventListener("click", function(e) {
     e.preventDefault();
-    document.body.scrollTo(0,0);
+    document.body.scrollTop = 0;
     document.body.classList.add("menu-open");
   })
 })();
@@ -1317,7 +1317,7 @@
       document.body.classList.remove("menu-open");
     });
   }
-})();
+})(window);
 
 </script>
 </body>
