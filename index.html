@@ -61,11 +61,11 @@
           "src": "/images/skipthedishes/skipthedishes--restaurants-mobile.jpg"
         },
 	{
-          "size": "large",
+          "size": "medium",
           "src": "/images/skipthedishes/skipthedishes--search.jpg"
         }, 
         {
-          "size": "large",
+          "size": "medium",
           "src": "/images/skipthedishes/skipthedishes--pickup.jpg"
         },
 	{
@@ -1148,12 +1148,12 @@
                 ),
                 m(".sample-list--details",
                   m("h3.sample-list--title", ctrl.sample.name),
-                  m("p.sample-list--summary", ctrl.sample.summary),
+                  m("p.sample-list--summary", ctrl.sample.summary)/*,
                   m(".sample-list--tags",
                     ctrl.sample.tags.map(function(tag) {
                       return m(".tag", tag);
                     })
-                  )
+                  )*/
                 )
               )
             )
