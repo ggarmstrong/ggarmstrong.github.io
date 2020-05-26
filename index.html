@@ -1218,10 +1218,9 @@
                   m("p.resume--intro-summary", "I know that building and maintaining beautiful, large-scale web apps requires creative thinking and cooperation from many parties. I take pride in contributing both the breadth of knowledge needed to manage cross-functional projects and teams, as well as more specialized skill in creating meticulous UX/UI.")
                 )
               ),
-              m(".resume--intro-details",
-		m(".resume--intro-contact",
-		  m(".skills-title",
+              m(".resume--skills",
 			m("h3", "Skills"),
+				m(".resume--skills-col",
 			  m("ul",
 			    m("li", "Mobile-first responsive workflow"),
 			    m("li", "Strategic class/element organization to avoid CSS bloat/over-nesting"),
@@ -1235,9 +1234,23 @@
 			    m("li", "Browser/device compatibility")
 			  ),
 		    ),
+						m(".resume--skills-col",
+			  m("ul",
+			    m("li", "Mobile-first responsive workflow"),
+			    m("li", "Strategic class/element organization to avoid CSS bloat/over-nesting"),
+			    m("li", "Up-to-date CSS3 best practices (flexbox, @font-face, icon fonts, retina-ready images, advanced selectors, animations/transitions, no bitmap images for styling, rem units, etc.)"),
+			    m("li", "CSS pre-processors (Stylus, Sass, LESS)"),
+			    m("li", "CSS post-processors (PostCSS, Autoprefixer, etc.)"),
+			    m("li", "Separate stylesheets using @import/@require"),
+			    m("li", "Up-to-date HTML5 best practices (descriptive structural elements, audio/video, Canvas, aria roles, modern form elements, etc.)"),
+			    m("li", "HTML pre-processors/templating engines (Jade, Haml, EJS, Handlebars, etc.)"),
+			    m("li", "In-browser mockups/prototypes"),
+			    m("li", "Browser/device compatibility")
+			  ),
 		  ),
               ),
-                m("h3", "Relevant Work Experience"),
+	      m(".resume--experience",
+                m("h3", "Work Experience"),
                 m(".resume--experience-item",
                   m(".resume--experience-meta.small-text",
                     m("h4", "Senior Web Designer"),
@@ -1246,6 +1259,7 @@
                   ),
                   m(".resume--experience-summary.small-text", "Working closely with other designers and developers in a busy environment, I produced mockups and did front-end implementation of high-end real estate software and custom websites. As a highly valued member of the team, I met with elite clients and estimated new project deadlines/costs. Internally I produced company marketing material and presented to my colleagues about new CSS features. I worked most with LESS, SVG maps, PHP and JS/jQuery.")
                 ),
+		),
               m("a.back-button[href=/]", { config: scrollRoute })
             )
           )
