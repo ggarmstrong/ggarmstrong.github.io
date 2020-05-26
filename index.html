@@ -1206,20 +1206,21 @@
               m(".resume--intro",
                 m(".resume--intro-title",
                   m("h3", "Geneva Armstrong"),
-                  m("h4", "Web Designer & Front-End Developer")
+                  m("h4", "Web Developer & Designer")
                 ),
                 m(".resume--intro-details",
                   m("p.resume--intro-contact",
                     m("a.small-text[href=mailto:armstrong.geneva@gmail.com]", "armstrong.geneva@gmail.com"),
                     m("br"),
                     m("a.small-text[href=http://ggarmstrong.github.io][target=_blank]", " ggarmstrong.github.io"),
-		    m("span", "204-955-9681")
+		    m(".small-text", "204-955-9681")
                   ),
                   m("p.resume--intro-summary", "I know that building and maintaining beautiful, large-scale web apps requires creative thinking and cooperation from many parties. I take pride in contributing both the breadth of knowledge needed to manage cross-functional projects and teams, as well as more specialized skill in creating meticulous UX/UI.")
                 )
               ),
               m(".resume--intro-details",
 		m(".resume--intro-contact",
+		  m(".skills-title",
 			m("h3", "Skills"),
 			  m("ul",
 			    m("li", "Mobile-first responsive workflow"),
@@ -1233,9 +1234,9 @@
 			    m("li", "In-browser mockups/prototypes"),
 			    m("li", "Browser/device compatibility")
 			  ),
+		    ),
 		  ),
               ),
-              m(".resume--experience",
                 m("h3", "Relevant Work Experience"),
                 m(".resume--experience-item",
                   m(".resume--experience-meta.small-text",
@@ -1245,31 +1246,6 @@
                   ),
                   m(".resume--experience-summary.small-text", "Working closely with other designers and developers in a busy environment, I produced mockups and did front-end implementation of high-end real estate software and custom websites. As a highly valued member of the team, I met with elite clients and estimated new project deadlines/costs. Internally I produced company marketing material and presented to my colleagues about new CSS features. I worked most with LESS, SVG maps, PHP and JS/jQuery.")
                 ),
-                m(".resume--experience-item",
-                  m(".resume--experience-meta.small-text",
-                    m("h4", "Web & Graphic Designer"),
-                    m("span", "Autostraddle.com"),
-                    m("span", "2012-2014")
-                  ),
-                  m(".resume--experience-summary.small-text", "I produced a variety of on-brand web graphics for a popular LBTQ news website targeted at young, web-savvy readers. I also did photo editing, post editing, transcribing, social media posting, etc. tasks in their large-scale WordPress environment.")
-                ),
-                m(".resume--experience-item",
-                  m(".resume--experience-meta.small-text",
-                    m("h4", "Web Designer"),
-                    m("span", "Websites.ca"),
-                    m("span", "2011-2014")
-                  ),
-                  m(".resume--experience-summary.small-text", "As one of two designers working for hundreds of small business clients across Canada, in addition to front-end work I did everything from DNS troubleshooting to writing WordPress themes to designing business cards.")
-                ),
-                m(".resume--experience-item",
-                  m(".resume--experience-meta.small-text",
-                    m("h4", "Freelance Web & Graphic Designer"),
-                    m("span", "Various clients"),
-                    m("span", "Ongoing")
-                  ),
-                  m(".resume--experience-summary.small-text", "Over the years I've done freelance web development, web design and print design work.")
-                )
-              ),
               m("a.back-button[href=/]", { config: scrollRoute })
             )
           )
