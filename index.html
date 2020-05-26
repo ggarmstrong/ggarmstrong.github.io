@@ -869,7 +869,7 @@
             m("a[href=/work-samples]", { config: scrollRoute }, "Work Samples")
           ),
           m("li",
-            m("a[href=/resume]", { config: scrollRoute }, "R\xE9sum\xE9")
+	  m("a[href=geneva-armstrong-resume.pdf]", "R\xE9sum\xE9 [PDF]")
           )
         )
       ),
@@ -1068,7 +1068,8 @@
             m(".hero--title",
   						m("h1", "Hey there, I'm Geneva. I love to build and design web apps."),
   						m("a.button[href=/work-samples]", {config: scrollRoute}, "Work Samples"),
-              m("a.button[href=/resume]", {config: scrollRoute}, "R\xE9sum\xE9")
+	      	  m("a.button[href=geneva-armstrong-resume.pdf]", "R\xE9sum\xE9 [PDF]")
+
             )
           )
         )
@@ -1285,8 +1286,7 @@
   m.route(document.getElementById("app-container"), "/", {
     "/": Hero,
     "/work-samples": SampleList,
-    "/work-sample/:slug": Sample,
-    "/resume": Resume
+    "/work-sample/:slug": Sample
   });
 })();
 
