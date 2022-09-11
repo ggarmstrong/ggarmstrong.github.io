@@ -13,10 +13,9 @@
 		<h2>Software Developer</h2>
 		<p>I have fun assembling, integrating, and evolving resiliant ui/ux design systems.</p>
 		<p>
-			I'm inspired by leaders in the field of modular component-driven product development and
-			testing. I aim to bring design-system-first workflows into practice to help the companies I
-			work with improve both the quality of their software products, as well as their overall brand
-			cohesion.
+			I'm inspired by leaders in the field of modular component-driven development and testing. I
+			aim to bring design-system-first workflows into practice to help improve product quality and
+			brand cohesion.
 		</p>
 		<ul>
 			<li>
@@ -30,27 +29,37 @@
 			</li>
 		</ul>
 	</div>
-	<div class="image">
+	<div class="image" style:transform="scale(2)">
 		<svg width="100%" viewBox="0 0 {imageSize} {imageSize}">
 			{#each Array(numOrbits) as _, orbitIndex}
 				{@const numAtoms = Math.pow(3, orbitIndex)}
 				{@const numMolecules = maxMolecules / numAtoms}
 				{@const moleculeRadius = imageSizeHalf - orbitWidth * orbitIndex}
-				{@const strokeDashArray = (moleculeRadius * 2 * Math.PI) / numMolecules}
 				{#each Array(numAtoms) as _, atomIndex}
-					{@const atomRadius = moleculeRadius + atomIndex}
-					{@debug orbitIndex, numAtoms, maxMolecules, numMolecules, moleculeRadius, strokeDashArray, atomRadius}
-					<g style:transform="rotate({0 * atomIndex}deg)">
-						<!-- todo use symbol -->
-						<circle
-							class="orbit"
-							id="orbit-{orbitIndex}-{atomIndex}"
-							cx="50"
-							cy="50"
-							r={atomRadius}
-							style:stroke-dasharray="0 {strokeDashArray}"
-						/>
-					</g>
+					{@const atomRadius = moleculeRadius - atomIndex}
+					{@const strokeDashArray = (atomRadius * 2 * Math.PI) / numMolecules}
+					{@const strokeColor = atomIndex === 0 ? 'red' : atomIndex === 1 ? 'blue' : 'green'}
+					{@debug orbitIndex, numAtoms, maxMolecules, numMolecules, moleculeRadius, strokeDashArray, atomIndex, atomRadius}
+					<!-- <g style:transform="rotate({0 * atomIndex}deg)"> -->
+					<!-- todo use symbol -->
+					<circle
+						class="orbit"
+						id="orbit-{orbitIndex}-{atomIndex}"
+						cx="50"
+						cy="50"
+						r={atomRadius}
+						style:stroke-dasharray="0 {strokeDashArray}"
+					/>
+					<circle
+						class="orbit-static"
+						cx="50"
+						cy="50"
+						r={atomRadius}
+						stroke={strokeColor}
+						stroke-width="0.15"
+						opacity="0.2"
+					/>
+					<!-- </g> -->
 				{/each}
 			{/each}
 		</svg>
