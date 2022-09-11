@@ -1,10 +1,22 @@
 <script>
 	import BaseLayout from '$components/BaseLayout.svelte';
-	const numOrbits = 2;
+	const numOrbits = 4;
 	const imageSize = 100;
 	const imageSizeHalf = imageSize / 2;
 	const orbitWidth = imageSizeHalf / numOrbits;
 	const maxMolecules = Math.pow(3, numOrbits);
+	const diamondTemp = [
+		// todo math
+		[-2, 0],
+		[-1, -1],
+		[-1, 1],
+		[0, -2],
+		[0, 0],
+		[0, 2],
+		[1, -1],
+		[1, 1],
+		[2, 0]
+	];
 </script>
 
 <BaseLayout>
@@ -36,10 +48,11 @@
 				{@const numMolecules = maxMolecules / numAtoms}
 				{@const moleculeRadius = imageSizeHalf - orbitWidth * orbitIndex}
 				{#each Array(numAtoms) as _, atomIndex}
-					{@const atomRadius = moleculeRadius - atomIndex}
+					{@const atomRadius = moleculeRadius + diamondTemp[atomIndex][0]}
 					{@const strokeDashArray = (atomRadius * 2 * Math.PI) / numMolecules}
-					{@const strokeColor = atomIndex === 0 ? 'red' : atomIndex === 1 ? 'blue' : 'green'}
-					{@debug orbitIndex, numAtoms, maxMolecules, numMolecules, moleculeRadius, strokeDashArray, atomIndex, atomRadius}
+					{@const strokeDashOffset = diamondTemp[atomIndex][1]}
+					<!-- {@const strokeColor = atomIndex === 0 ? 'red' : atomIndex === 1 ? 'blue' : 'green'} -->
+					{@debug atomIndex, atomRadius, strokeDashOffset}
 					<!-- <g style:transform="rotate({0 * atomIndex}deg)"> -->
 					<!-- todo use symbol -->
 					<circle
@@ -49,8 +62,9 @@
 						cy="50"
 						r={atomRadius}
 						style:stroke-dasharray="0 {strokeDashArray}"
+						style:stroke-dashoffset={strokeDashOffset}
 					/>
-					<circle
+					<!-- <circle
 						class="orbit-static"
 						cx="50"
 						cy="50"
@@ -58,7 +72,7 @@
 						stroke={strokeColor}
 						stroke-width="0.15"
 						opacity="0.2"
-					/>
+					/> -->
 					<!-- </g> -->
 				{/each}
 			{/each}
