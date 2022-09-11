@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+    {
+        "type": "pwa-msedge",
+        "url": "http://localhost:5173",
+        "webRoot": "${workspaceFolder}/src",
+        "request": "launch",
+        "runtimeExecutable": "stable",
+        "runtimeArgs": ["--headless"],
+        "name": "webdebug",
+    }
+  ]
+}
