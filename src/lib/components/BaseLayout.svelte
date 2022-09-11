@@ -16,4 +16,10 @@
 		background: #111;
 		color: #eee;
 	}
+	main {
+		max-width: 960px;
+		display: flex;
+		margin-left: auto;
+		margin-right: auto;
+	}
 </style>
