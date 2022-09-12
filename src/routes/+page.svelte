@@ -37,12 +37,12 @@
 					Gene Armstrong<br />
 					<em>Software Dev</em>
 				</div>
-				<img src="https://images.unsplash.com/photo-1661956600684-97d3a4320e45" />
+				<img src="/ggarmstrong-avatar.png" />
 			</address>
 		</div>
 		<ul>
 			<li>
-				<a href="#">
+				<a href="/demos/advanced-design-systems">
 					See a demo of my work <IconChevronRight />
 				</a>
 			</li>
@@ -119,7 +119,7 @@
 	}
 
 	.intro {
-		background: #021412;
+		background: #021715;
 		padding: 3rem 3rem 2rem;
 		flex: 1;
 		display: flex;
@@ -158,7 +158,7 @@
 		font-weight: bold;
 		margin-right: 1.5rem;
 		line-height: 1.5;
-		color: #62968f;
+		color: #74a49e;
 		text-align: right;
 		em {
 			font-weight: normal;
@@ -182,18 +182,18 @@
 			text-decoration: none;
 			padding: 2rem 3rem;
 			border-style: solid;
-			border-color: #021412;
+			border-color: #064640;
 			border-width: 0;
-			border-bottom-width: 1px;
-			color: #62968f;
+			border-top-width: 1px;
+			color: #74a49e;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
 		}
 
-		&:last-child a {
-			border-bottom-width: 0;
-		}
+		// &:last-child a {
+		// 	border-bottom-width: 0;
+		// }
 	}
 
 	.image {

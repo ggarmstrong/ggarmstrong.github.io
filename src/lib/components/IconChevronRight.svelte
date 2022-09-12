@@ -1,5 +1,5 @@
-<svg viewBox="0 0 512 512" width="24px" height="24px"
-	><path
+<svg viewBox="0 0 512 512" width="24px" height="24px">
+	<path
 		fill="none"
 		stroke="currentColor"
 		stroke-linecap="round"
