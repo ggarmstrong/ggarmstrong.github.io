@@ -6,30 +6,37 @@
 
 	:global(body) {
 		background: #052924;
-		color: #ddd;
+		color: #b5b5b5;
 		font-family: 'PP Mori';
 		margin: 0;
 	}
 
 	:global(h1, h2, h3, h4, h5, h6) {
 		line-height: 1;
-		// margin-bottom: 1em;
+		margin-top: 0;
+		margin-bottom: 0.5em;
 	}
 
 	:global(h1) {
 		font-size: 4rem;
+		color: #eee;
 	}
 
 	:global(p) {
-		line-height: 1.6;
+		font-size: 1.2rem;
+		line-height: 1.5;
+		margin-top: 0;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 	}
 
 	main {
 		max-width: 640px;
 		display: flex;
 		flex-direction: column;
-		margin-left: auto;
-		margin-right: auto;
+		// margin-left: auto;
+		// margin-right: auto;
 		// background: rgb(194, 56, 22);
 		// transform: translateX(-50%);
 

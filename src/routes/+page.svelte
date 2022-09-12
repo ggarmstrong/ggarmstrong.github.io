@@ -23,17 +23,15 @@
 </script>
 
 <BaseLayout>
-	<div class="intro">
-		<h1>
-			Gene Armstrong<br />
-			<em>Software Developer</em>
-		</h1>
-		<p>I have fun assembling, integrating, and evolving resiliant ui/ux design systems.</p>
-		<p>
-			I'm inspired by leaders in the field of modular component-driven development and testing. I
-			aim to bring design-system-first workflows into practice to help improve product quality and
-			brand cohesion.
-		</p>
+	<div class="content">
+		<div class="intro">
+			<p>I have fun assembling, integrating, and evolving resiliant ui/ux design systems.</p>
+			<p>
+				I'm inspired by leaders in the field of modular component-driven frontend development and
+				testing. I aim to bring design-system-first workflows into practice to help improve
+				real-world product quality and brand cohesion.
+			</p>
+		</div>
 		<ul>
 			<li>
 				<icon name="?" />See a demo of my work
@@ -57,13 +55,6 @@
 					style:stroke-dasharray="0 {centerStrokeDashArray}"
 				/>
 			{/each}
-			<!-- <circle
-				class="orbit"
-				cx="50"
-				cy="50"
-				r="4"
-				style:stroke-dasharray="0 {centerStrokeDashArray}"
-			/> -->
 			{#each Array(numOrbits) as _, orbitIndex}
 				{@const numAtoms = Math.pow(3, orbitIndex)}
 				{@const numMolecules = maxMolecules / numAtoms}
@@ -73,10 +64,6 @@
 						{@const atomRadius = moleculeRadius + diamondTemp[atomIndex][0]}
 						{@const strokeDashArray = (atomRadius * 2 * Math.PI) / numMolecules}
 						{@const strokeDashOffset = diamondTemp[atomIndex][1]}
-						<!-- {@const strokeColor = atomIndex === 0 ? 'red' : atomIndex === 1 ? 'blue' : 'green'} -->
-						{@debug atomIndex, atomRadius, strokeDashOffset}
-						<!-- <g style:transform="rotate({0 * atomIndex}deg)"> -->
-						<!-- todo use symbol -->
 						<circle
 							class="orbit"
 							cx="50"
@@ -85,16 +72,6 @@
 							style:stroke-dasharray="0 {strokeDashArray}"
 							style:stroke-dashoffset={strokeDashOffset}
 						/>
-						<!-- <circle
-						class="orbit-static"
-						cx="50"
-						cy="50"
-						r={atomRadius}
-						stroke={strokeColor}
-						stroke-width="0.15"
-						opacity="0.2"
-					/> -->
-						<!-- </g> -->
 					{/each}
 				</g>
 			{/each}
@@ -112,31 +89,34 @@
 		}
 	}
 
-	.intro {
+	.content {
 		flex: 2;
-		padding: 2rem;
-		background: #151515;
-		transform: translateX(-50%);
+		// transform: translateX(-50%);
+	}
 
-		h1 em {
-			font-size: 2rem;
-		}
+	.intro {
+		background: #151515;
+		padding: 3rem;
+	}
+
+	ul {
+		background: #111111;
+		padding: 3rem;
+	}
+
+	li {
+		padding: 2rem 3rem;
+		border-top: 1px solid #222;
 	}
 
 	.image {
 		flex: 1;
-		// padding: 2rem;
-		// max-width: 360px;
-		// background-color: rgb(194, 56, 22);
 		border-radius: 0.25rem;
 		position: fixed;
 		z-index: -1;
 		top: -50%;
 		left: 33%;
-		// transform: translateX(-50%);
-		// width: 50%;
 		height: 200%;
-		// overflow: hidden;
 		svg {
 			overflow: visible;
 			width: 100%;
@@ -161,26 +141,9 @@
 		animation-delay: -10s;
 	}
 
-	// #orbit-2 {
-	// 	stroke-dasharray: 0 8; // todo the math;
-	// 	animation-duration: 20s;
-	// 	animation-direction: reverse;
-	// }
-
-	// #orbit-3 {
-	// 	stroke-dasharray: 0 8; // todo the math;
-	// 	animation-duration: 20s;
-	// 	animation-direction: reverse;
-	// }
-
-	// #orbit-4 {
-	// 	stroke-dasharray: 0 8; // todo the math;
-	// 	animation-duration: 20s;
-	// 	animation-direction: reverse;
-	// }
-
-	.page {
-		transform: scale(0.25);
-		// transform-origin: 50% 50%;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
 	}
 </style>
