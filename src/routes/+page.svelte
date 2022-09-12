@@ -35,7 +35,7 @@
 			<address>
 				<div class="byline">
 					Gene Armstrong<br />
-					<em>Software Developer</em>
+					<em>Software Dev</em>
 				</div>
 				<img src="https://images.unsplash.com/photo-1661956600684-97d3a4320e45" />
 			</address>
@@ -120,7 +120,7 @@
 
 	.intro {
 		background: #021412;
-		padding: 3rem;
+		padding: 3rem 3rem 2rem;
 		flex: 1;
 		display: flex;
 		flex-direction: column;
@@ -156,11 +156,13 @@
 	.byline {
 		font-style: normal;
 		font-weight: bold;
-		margin-right: 1rem;
+		margin-right: 1.5rem;
 		line-height: 1.5;
 		color: #62968f;
+		text-align: right;
 		em {
 			font-weight: normal;
+			font-style: normal;
 		}
 	}
 
@@ -221,7 +223,7 @@
 	.orbit {
 		transform-origin: 50% 50%;
 		animation-name: orbit;
-		animation-duration: 15s;
+		animation-duration: 20s;
 		animation-iteration-count: infinite;
 		animation-timing-function: cubic-bezier(0.42, 0.2, 0.58, 0.8);
 		stroke: rgb(194, 56, 22);
@@ -232,7 +234,7 @@
 
 	.orbit-group:nth-of-type(odd) .orbit {
 		animation-direction: reverse;
-		animation-duration: 25s;
+		animation-duration: 30s;
 		animation-delay: -10s;
 	}
 </style>
