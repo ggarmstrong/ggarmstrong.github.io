@@ -1,6 +1,6 @@
 <script>
 	import BaseLayout from '$components/BaseLayout.svelte';
-	const numOrbits = 4;
+	const numOrbits = 3;
 	const imageSize = 100;
 	const imageSizeHalf = imageSize / 2;
 	const orbitWidth = imageSizeHalf / numOrbits;
@@ -17,6 +17,9 @@
 		[1, 1],
 		[2, 0]
 	];
+	const centerOrbits = 5;
+	const centerRadius = 5;
+	const centerStrokeDashArray = (centerRadius * 2 * Math.PI) / 20;
 </script>
 
 <BaseLayout>
@@ -41,8 +44,24 @@
 			</li>
 		</ul>
 	</div>
-	<div class="image" style:transform="scale(2)">
+	<div class="image">
 		<svg width="100%" viewBox="0 0 {imageSize} {imageSize}">
+			{#each Array(centerOrbits) as _, centerOrbitIndex}
+				<circle
+					class="orbit"
+					cx="50"
+					cy="50"
+					r={centerRadius - centerOrbitIndex}
+					style:stroke-dasharray="0 {centerStrokeDashArray}"
+				/>
+			{/each}
+			<circle
+				class="orbit"
+				cx="50"
+				cy="50"
+				r="4"
+				style:stroke-dasharray="0 {centerStrokeDashArray}"
+			/>
 			{#each Array(numOrbits) as _, orbitIndex}
 				{@const numAtoms = Math.pow(3, orbitIndex)}
 				{@const numMolecules = maxMolecules / numAtoms}
@@ -57,7 +76,6 @@
 					<!-- todo use symbol -->
 					<circle
 						class="orbit"
-						id="orbit-{orbitIndex}-{atomIndex}"
 						cx="50"
 						cy="50"
 						r={atomRadius}
@@ -99,6 +117,8 @@
 		flex: 1;
 		padding: 1rem;
 		max-width: 360px;
+		background-color: rgb(194, 56, 22);
+		border-radius: 0.25rem;
 		svg {
 			overflow: visible;
 		}
@@ -110,7 +130,7 @@
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
 		// animation-direction: alternate-reverse;
-		stroke: white;
+		stroke: #111;
 		stroke-width: 1;
 		stroke-linecap: round;
 		fill: none;
