@@ -1,18 +1,1 @@
-<!-- <slot name="header">
-	<Header />
-</slot>
-<slot name="menu" /> -->
-<main>
-	<slot />
-</main>
-
-<!-- <slot name="footer" /> -->
-
-<style>
-	main {
-		max-width: 960px;
-		display: flex;
-		margin-left: auto;
-		margin-right: auto;
-	}
-</style>
+<slot />

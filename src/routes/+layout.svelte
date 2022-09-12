@@ -1,6 +1,43 @@
-<slot />
+<main><slot /></main>
 
-<style>
+<style type="scss">
+	// :root {
+	// }
+
+	:global(body) {
+		background: #052924;
+		color: #ddd;
+		font-family: 'PP Mori';
+		margin: 0;
+	}
+
+	:global(h1, h2, h3, h4, h5, h6) {
+		line-height: 1;
+		// margin-bottom: 1em;
+	}
+
+	:global(h1) {
+		font-size: 4rem;
+	}
+
+	:global(p) {
+		line-height: 1.6;
+	}
+
+	main {
+		max-width: 640px;
+		display: flex;
+		flex-direction: column;
+		margin-left: auto;
+		margin-right: auto;
+		// background: rgb(194, 56, 22);
+		// transform: translateX(-50%);
+
+		@media (min-width: 640px) {
+			flex-direction: row;
+		}
+	}
+
 	@font-face {
 		font-family: 'PP Mori';
 		src: url('/fonts/PPMori-Extralight.woff2') format('woff2'),
@@ -53,11 +90,5 @@
 		font-weight: normal;
 		font-style: italic;
 		font-display: swap;
-	}
-
-	:global(body) {
-		background: #111;
-		color: #eee;
-		font-family: 'PP Mori';
 	}
 </style>
