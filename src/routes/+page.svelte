@@ -1,5 +1,6 @@
 <script>
 	import BaseLayout from '$components/BaseLayout.svelte';
+	import IconChevronRight from '$components/IconChevronRight.svelte';
 	const numOrbits = 3;
 	const imageSize = 100;
 	const imageSizeHalf = imageSize / 2;
@@ -31,51 +32,66 @@
 				testing. I aim to bring design-system-first workflows into practice to help improve
 				real-world product quality and brand cohesion.
 			</p>
+			<address>
+				<div class="byline">
+					Gene Armstrong<br />
+					<em>Software Developer</em>
+				</div>
+				<img src="https://images.unsplash.com/photo-1661956600684-97d3a4320e45" />
+			</address>
 		</div>
 		<ul>
 			<li>
-				<icon name="?" />See a demo of my work
+				<a href="#">
+					See a demo of my work <IconChevronRight />
+				</a>
 			</li>
 			<li>
-				<icon name="pdf" />View my detailed CV
+				<a href="#">
+					View my detailed CV<IconChevronRight />
+				</a>
 			</li>
 			<li>
-				<icon name="email" />Get in touch with me
+				<a href="#">
+					Get in touch with me<IconChevronRight />
+				</a>
 			</li>
 		</ul>
 	</div>
 	<div class="image">
-		<svg width="100%" viewBox="0 0 {imageSize} {imageSize}">
-			{#each Array(centerOrbits) as _, centerOrbitIndex}
-				<circle
-					class="orbit orbit-center"
-					cx="50"
-					cy="50"
-					r={centerRadius - centerOrbitIndex * 1.25}
-					style:stroke-dasharray="0 {centerStrokeDashArray}"
-				/>
-			{/each}
-			{#each Array(numOrbits) as _, orbitIndex}
-				{@const numAtoms = Math.pow(3, orbitIndex)}
-				{@const numMolecules = maxMolecules / numAtoms}
-				{@const moleculeRadius = imageSizeHalf - orbitWidth * orbitIndex}
-				<g class="orbit-group">
-					{#each Array(numAtoms) as _, atomIndex}
-						{@const atomRadius = moleculeRadius + diamondTemp[atomIndex][0]}
-						{@const strokeDashArray = (atomRadius * 2 * Math.PI) / numMolecules}
-						{@const strokeDashOffset = diamondTemp[atomIndex][1]}
-						<circle
-							class="orbit"
-							cx="50"
-							cy="50"
-							r={atomRadius}
-							style:stroke-dasharray="0 {strokeDashArray}"
-							style:stroke-dashoffset={strokeDashOffset}
-						/>
-					{/each}
-				</g>
-			{/each}
-		</svg>
+		<div class="image-inner">
+			<svg width="100%" height="100%" viewBox="0 0 {imageSize} {imageSize}">
+				{#each Array(centerOrbits) as _, centerOrbitIndex}
+					<circle
+						class="orbit orbit-center"
+						cx="50"
+						cy="50"
+						r={centerRadius - centerOrbitIndex * 1.25}
+						style:stroke-dasharray="0 {centerStrokeDashArray}"
+					/>
+				{/each}
+				{#each Array(numOrbits) as _, orbitIndex}
+					{@const numAtoms = Math.pow(3, orbitIndex)}
+					{@const numMolecules = maxMolecules / numAtoms}
+					{@const moleculeRadius = imageSizeHalf - orbitWidth * orbitIndex}
+					<g class="orbit-group">
+						{#each Array(numAtoms) as _, atomIndex}
+							{@const atomRadius = moleculeRadius + diamondTemp[atomIndex][0]}
+							{@const strokeDashArray = (atomRadius * 2 * Math.PI) / numMolecules}
+							{@const strokeDashOffset = diamondTemp[atomIndex][1]}
+							<circle
+								class="orbit"
+								cx="50"
+								cy="50"
+								r={atomRadius}
+								style:stroke-dasharray="0 {strokeDashArray}"
+								style:stroke-dashoffset={strokeDashOffset}
+							/>
+						{/each}
+					</g>
+				{/each}
+			</svg>
+		</div>
 	</div>
 </BaseLayout>
 
@@ -90,39 +106,118 @@
 	}
 
 	.content {
-		flex: 2;
-		// transform: translateX(-50%);
+		// flex: 2;
+		// position: relative;
+		// left: 10rem;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		@media (min-width: 640px) {
+			min-width: 480px;
+			width: 40%;
+		}
 	}
 
 	.intro {
-		background: #151515;
+		background: #021412;
 		padding: 3rem;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		// border-top-right-radius: 2rem;
+		// border-top-left-radius: 2rem;
+	}
+
+	address {
+		display: flex;
+		justify-content: flex-end;
+		// margin-top: 2rem;
+		padding-top: 2rem;
+		padding-right: 1rem;
+		// padding-left: 1rem;
+		align-items: center;
+		// border-style: solid;
+		// border-color: #03201d;
+		// border-width: 0;
+		// border-top-width: 1px;
+		img {
+			width: 50px;
+			height: 50px;
+			border-radius: 100%;
+
+			@media (min-width: 640px) {
+				width: 70px;
+				height: 70px;
+			}
+		}
+	}
+
+	.byline {
+		font-style: normal;
+		font-weight: bold;
+		margin-right: 1rem;
+		line-height: 1.5;
+		color: #62968f;
+		em {
+			font-weight: normal;
+		}
 	}
 
 	ul {
-		background: #111111;
-		padding: 3rem;
+		margin: 0;
+		padding: 0;
+		// padding: 3rem;
+		background: #000a07;
+		list-style: none;
+		// flex: 1;
 	}
 
 	li {
-		padding: 2rem 3rem;
-		border-top: 1px solid #222;
+		a {
+			display: block;
+			font-weight: bold;
+			text-decoration: none;
+			padding: 2rem 3rem;
+			border-style: solid;
+			border-color: #021412;
+			border-width: 0;
+			border-bottom-width: 1px;
+			color: #62968f;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		&:last-child a {
+			border-bottom-width: 0;
+		}
 	}
 
 	.image {
 		flex: 1;
-		border-radius: 0.25rem;
-		position: fixed;
-		z-index: -1;
-		top: -50%;
-		left: 33%;
-		height: 200%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		overflow: hidden;
+
 		svg {
 			overflow: visible;
 			width: 100%;
 			height: 100%;
 		}
 	}
+
+	.image-inner {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform: scale(1.35);
+	}
+
 	.orbit {
 		transform-origin: 50% 50%;
 		animation-name: orbit;
@@ -139,11 +234,5 @@
 		animation-direction: reverse;
 		animation-duration: 25s;
 		animation-delay: -10s;
-	}
-
-	ul {
-		margin: 0;
-		padding: 0;
-		list-style: none;
 	}
 </style>

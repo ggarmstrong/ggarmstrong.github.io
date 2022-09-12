@@ -1,14 +1,20 @@
 <main><slot /></main>
 
 <style type="scss">
-	// :root {
-	// }
+	:root {
+		height: 100%;
+	}
 
 	:global(body) {
 		background: #052924;
 		color: #b5b5b5;
 		font-family: 'PP Mori';
 		margin: 0;
+		height: 100%;
+	}
+
+	:global(body > div:not([style])) {
+		height: 100%;
 	}
 
 	:global(h1, h2, h3, h4, h5, h6) {
@@ -32,9 +38,10 @@
 	}
 
 	main {
-		max-width: 640px;
+		// max-width: 640px;
 		display: flex;
 		flex-direction: column;
+		height: 100%;
 		// margin-left: auto;
 		// margin-right: auto;
 		// background: rgb(194, 56, 22);
