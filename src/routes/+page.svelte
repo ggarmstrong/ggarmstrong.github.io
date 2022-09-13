@@ -198,6 +198,12 @@
 			max-width: 640px;
 			margin-left: auto;
 			margin-right: auto;
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: underline;
+				outline: 0
+			}
 		}
 		&:first-of-type {
 			border-top-width: 0;
@@ -227,11 +233,11 @@
 			width: 100%;
 			height: auto;
 
-			@media (min-width: 640px) {
+			@media (min-width: 960px) {
 				transform: scale(1.15);
 			}
 
-			@media (min-width: 1200px) and (max-width: 1200px) {
+			@media (min-width: 960px) and (max-width: 1200px) {
 				height: 100%;
 				width: auto;
 			}
