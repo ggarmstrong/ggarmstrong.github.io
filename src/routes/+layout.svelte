@@ -77,7 +77,10 @@
 	}
 
 	:global(h1) {
-		font-size: 4rem;
+		font-size: 3rem;
+		@media (min-width: 640px) {
+			font-size: 4rem;
+		}
 	}
 
 	:global(p) {
@@ -91,10 +94,12 @@
 	main {
 		display: flex;
 		flex-direction: column-reverse;
+		justify-content: flex-end;
 		height: 100%;
 
-		@media (min-width: 640px) {
+		@media (min-width: 960px) {
 			flex-direction: row;
+			justify-content: flex-start;
 		}
 	}
 </style>
