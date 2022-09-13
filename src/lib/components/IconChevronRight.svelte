@@ -4,7 +4,7 @@
 		stroke="currentColor"
 		stroke-linecap="round"
 		stroke-linejoin="round"
-		stroke-width="50"
+		stroke-width="var(--theme-icon-stroke)"
 		d="M184 112l144 144-144 144"
 	/>
 </svg>

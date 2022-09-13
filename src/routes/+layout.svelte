@@ -1,14 +1,34 @@
+<svelte:head>
+	<link rel="preload" href="/fonts/PPMori-Regular.woff2" />
+	<link rel="preload" href="/fonts/PPMori-SemiBold.woff2" />
+	<link rel="preload" href="/fonts/PPMori-RegularItalic.woff2" />
+</svelte:head>
+
 <main><slot /></main>
 
 <style type="scss">
 	:root {
 		height: 100%;
+
+		--theme-color-orange-500: #c23816;
+		--theme-color-orange: var(--theme-color-orange-500);
+		--theme-color-teal-100: #d1e1df;
+		--theme-color-teal-300: #93b8b4;
+		--theme-color-teal-500: #042f2b;
+		--theme-color-teal-600: #052924;
+		--theme-color-teal-800: #021715;
+		--theme-color-teal-900: #000a07;
+		--theme-color-teal: var(--theme-color-teal-500);
+
+		--theme-icon-stroke: 32;
 	}
 
 	:global(body) {
-		background: #052924;
-		color: #b5b5b5;
-		font-family: 'PP Mori';
+		font-size: 1rem;
+		line-height: 1.5;
+		background: var(--theme-color-teal-600);
+		color: var(--theme-color-teal-300);
+		font-family: 'PP Mori', sans-serif;
 		margin: 0;
 		height: 100%;
 	}
@@ -17,7 +37,12 @@
 		height: 100%;
 	}
 
+	:global(a) {
+		color: var(--theme-color-teal-300);
+	}
+
 	:global(h1, h2, h3, h4, h5, h6) {
+		color: var(--theme-color-teal-100);
 		line-height: 1;
 		margin-top: 0;
 		margin-bottom: 0.5em;
@@ -25,12 +50,11 @@
 
 	:global(h1) {
 		font-size: 4rem;
-		color: #eee;
 	}
 
 	:global(p) {
-		font-size: 1.2rem;
-		line-height: 1.5;
+		// font-size: 1.2rem;
+		// line-height: 1.5;
 		margin-top: 0;
 		&:last-of-type {
 			margin-bottom: 0;
@@ -54,35 +78,15 @@
 
 	@font-face {
 		font-family: 'PP Mori';
-		src: url('/fonts/PPMori-Extralight.woff2') format('woff2'),
-			url('/fonts/PPMori-Extralight.woff') format('woff');
-		font-weight: 100;
+		src: url('/fonts/PPMori-SemiBold.woff2') format('woff2');
+		font-weight: bold;
 		font-style: normal;
 		font-display: swap;
 	}
 
 	@font-face {
 		font-family: 'PP Mori';
-		src: url('/fonts/PPMori-ExtralightItalic.woff2') format('woff2'),
-			url('/fonts/PPMori-ExtralightItalic.woff') format('woff');
-		font-weight: 100;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'PP Mori';
-		src: url('/fonts/PPMori-SemiBold.woff2') format('woff2'),
-			url('/fonts/PPMori-SemiBold.woff') format('woff');
-		font-weight: 600;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'PP Mori';
-		src: url('/fonts/PPMori-Regular.woff2') format('woff2'),
-			url('/fonts/PPMori-Regular.woff') format('woff');
+		src: url('/fonts/PPMori-Regular.woff2') format('woff2');
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
@@ -90,17 +94,7 @@
 
 	@font-face {
 		font-family: 'PP Mori';
-		src: url('/fonts/PPMori-SemiBoldItalic.woff2') format('woff2'),
-			url('/fonts/PPMori-SemiBoldItalic.woff') format('woff');
-		font-weight: 600;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'PP Mori';
-		src: url('/fonts/PPMori-RegularItalic.woff2') format('woff2'),
-			url('/fonts/PPMori-RegularItalic.woff') format('woff');
+		src: url('/fonts/PPMori-RegularItalic.woff2') format('woff2');
 		font-weight: normal;
 		font-style: italic;
 		font-display: swap;
