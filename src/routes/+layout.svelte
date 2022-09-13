@@ -7,6 +7,30 @@
 <main><slot /></main>
 
 <style type="scss">
+	@font-face {
+		font-family: 'PP Mori';
+		src: url('/fonts/PPMori-SemiBold.woff2') format('woff2');
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'PP Mori';
+		src: url('/fonts/PPMori-Regular.woff2') format('woff2');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'PP Mori';
+		src: url('/fonts/PPMori-RegularItalic.woff2') format('woff2');
+		font-weight: normal;
+		font-style: italic;
+		font-display: swap;
+	}
+
 	:root {
 		height: 100%;
 
@@ -19,8 +43,12 @@
 		--theme-color-teal-800: #021715;
 		--theme-color-teal-900: #000a07;
 		--theme-color-teal: var(--theme-color-teal-500);
-
 		--theme-icon-stroke: 32;
+		--theme-padding: 1.5rem;
+
+		@media (min-width: 640px) {
+			--theme-padding: 3rem;
+		}
 	}
 
 	:global(body) {
@@ -53,50 +81,20 @@
 	}
 
 	:global(p) {
-		// font-size: 1.2rem;
-		// line-height: 1.5;
 		margin-top: 0;
+
 		&:last-of-type {
 			margin-bottom: 0;
 		}
 	}
 
 	main {
-		// max-width: 640px;
 		display: flex;
-		flex-direction: column;
+		flex-direction: column-reverse;
 		height: 100%;
-		// margin-left: auto;
-		// margin-right: auto;
-		// background: rgb(194, 56, 22);
-		// transform: translateX(-50%);
 
 		@media (min-width: 640px) {
 			flex-direction: row;
 		}
-	}
-
-	@font-face {
-		font-family: 'PP Mori';
-		src: url('/fonts/PPMori-SemiBold.woff2') format('woff2');
-		font-weight: bold;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'PP Mori';
-		src: url('/fonts/PPMori-Regular.woff2') format('woff2');
-		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'PP Mori';
-		src: url('/fonts/PPMori-RegularItalic.woff2') format('woff2');
-		font-weight: normal;
-		font-style: italic;
-		font-display: swap;
 	}
 </style>

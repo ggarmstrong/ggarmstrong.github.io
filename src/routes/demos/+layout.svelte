@@ -4,7 +4,7 @@
 
 <section>
 	<a href="/" title="Go Back"><IconArrowLeft /></a>
-	<h1>Demos</h1>
+	<h1>Work Examples</h1>
 	<slot />
 </section>
 

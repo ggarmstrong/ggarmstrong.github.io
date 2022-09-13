@@ -1,6 +1,8 @@
 <script>
 	import IconChevronRight from '$components/IconChevronRight.svelte';
 	import IconMail from '$components/IconMail.svelte';
+	import IconPlay from '$components/IconPlay.svelte';
+	import IconDownload from '$components/IconDownload.svelte';
 	const numOrbits = 3;
 	const imageSize = 100;
 	const imageSizeHalf = imageSize / 2;
@@ -47,14 +49,14 @@
 	</div>
 	<ul>
 		<li>
-			<a href="/demos/advanced-design-systems">
-				<span class="label"><span class="icon"><IconMail /></span> See a demo of my work</span
+			<a href="/demos">
+				<span class="label"><span class="icon"><IconPlay /></span> See examples of my work</span
 				><IconChevronRight />
 			</a>
 		</li>
 		<li>
 			<a href="#">
-				<span class="label"><span class="icon"><IconMail /></span> View my detailed CV</span
+				<span class="label"><span class="icon"><IconDownload /></span> Download my CV (PDF)</span
 				><IconChevronRight />
 			</a>
 		</li>
@@ -125,7 +127,7 @@
 
 	.intro {
 		background: var(--theme-color-teal-800);
-		padding: 3rem 3rem 2rem;
+		padding: var(--theme-padding);
 		flex: 1;
 		display: flex;
 		flex-direction: column;
@@ -135,7 +137,7 @@
 	address {
 		display: flex;
 		justify-content: flex-end;
-		padding-top: 2rem;
+		padding-top: 1.5rem;
 		padding-right: 1rem;
 		align-items: center;
 	}
@@ -174,30 +176,28 @@
 		list-style: none;
 	}
 
-	li {
-		a {
-			display: flex;
-			// font-weight: bold;
-			text-decoration: none;
-			padding: 1.5rem 3rem 1.25rem;
-			border-style: solid;
-			border-color: var(--theme-color-teal-500);
-			border-width: 0;
-			border-top-width: 1px;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			line-height: 1;
+	li a {
+		display: flex;
+		// font-weight: bold;
+		text-decoration: none;
+		padding: 1.5rem var(--theme-padding) 1.25rem;
+		border-style: solid;
+		border-color: var(--theme-color-teal-500);
+		border-width: 0;
+		border-top-width: 1px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		line-height: 1;
+	}
 
-			.label {
-				display: flex;
-				align-items: center;
-			}
+	.label {
+		display: flex;
+		align-items: center;
+	}
 
-			.icon {
-				margin-right: 0.75rem;
-			}
-		}
+	.icon {
+		margin-right: 0.75rem;
 	}
 
 	.image {
@@ -207,6 +207,7 @@
 		justify-content: center;
 		position: relative;
 		overflow: hidden;
+		min-height: 200px;
 
 		svg {
 			overflow: visible;
@@ -217,11 +218,11 @@
 
 	.image-inner {
 		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		transform: scale(1.35);
+		top: 50;
+		left: 50%;
+		width: 110%;
+		// height: 100%;
+		transform: translate(-50%);
 	}
 
 	.orbit {
