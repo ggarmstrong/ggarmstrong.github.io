@@ -69,18 +69,8 @@
 		</li>
 	</ul>
 </div>
-<div class="image">
-	<!-- <div class="image-inner"> -->
-	<svg viewBox="0 0 {imageSize} {imageSize}" preserveAspectRatio="xMidyMid slice">
-		{#each Array(centerOrbits) as _, centerOrbitIndex}
-			<circle
-				class="orbit orbit-center"
-				cx="50"
-				cy="50"
-				r={centerRadius - centerOrbitIndex * 1.25}
-				style:stroke-dasharray="0 {centerStrokeDashArray}"
-			/>
-		{/each}
+<Galaxy />
+		<!-- <Nucleus /> -->
 		{#each Array(numOrbits) as _, orbitIndex}
 			{@const numAtoms = Math.pow(3, orbitIndex)}
 			{@const numMolecules = maxMolecules / numAtoms}
@@ -123,43 +113,7 @@
 		min-width: 40%;
 	}
 
-
-
 	
-	.image {
-		position: relative;
-		overflow: hidden;
-		min-height: 15%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-
-		svg {
-			overflow: visible;
-			width: 100%;
-			height: auto;
-
-			@media (min-width: 960px) {
-				transform: scale(1.15);
-			}
-
-			@media (min-width: 960px) and (max-width: 1200px) {
-				height: 100%;
-				width: auto;
-			}
-		}
-	}
-
-	.image-inner {
-		position: absolute;
-		left: -5%;
-		right: -5%;
-		bottom: -5%;
-		top: -5%;
-		display: flex;
-		align-items: center;
-	}
 
 	.orbit {
 		transform-origin: 50% 50%;
