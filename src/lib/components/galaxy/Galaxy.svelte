@@ -3,8 +3,6 @@
 	import Rings from '$components/galaxy/Rings.svelte';
 	const size = 100;
 	const sizeHalf = size / 2;
-	// const rings = 5;
-	// const orbitWidth = sizeHalf / rings;
 </script>
 
 <div>
@@ -15,6 +13,34 @@
 </div>
 
 <style lang="scss">
+	@keyframes -global-orbit {
+		// todo confirm this isn't repeated
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	:global(.orbit) {
+		transform-origin: 50% 50%;
+		animation-name: orbit;
+		animation-duration: 20s;
+		animation-iteration-count: infinite;
+		animation-timing-function: cubic-bezier(0.42, 0.2, 0.58, 0.8);
+		stroke: var(--theme-color-orange);
+		stroke-width: 1;
+		stroke-linecap: round;
+		fill: none;
+	}
+
+	:global(.orbit.reverse) {
+		animation-direction: reverse;
+		animation-duration: 30s;
+		animation-delay: -10s;
+	}
+
 	div {
 		position: relative;
 		overflow: hidden;
