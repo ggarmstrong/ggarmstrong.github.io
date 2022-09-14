@@ -1,5 +1,9 @@
+<script>
+	import Avatar from '$components/intro/Avatar.svelte';
+</script>
+
 <address>
-	<div class="byline">
+	<div>
 		Gene Armstrong<br />
 		Software Dev
 	</div>
@@ -15,7 +19,7 @@
 		align-items: center;
 	}
 
-	.byline {
+	div {
 		margin-right: 1.5rem;
 		line-height: 1.5;
 		text-align: right;

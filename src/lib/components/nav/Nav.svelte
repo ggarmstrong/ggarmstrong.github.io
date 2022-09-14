@@ -1,8 +1,9 @@
 <script>
-	import NavItem from '$components/nav/NavItem';
-	import IconPlay from '$components/icons/IconPlay';
-	import IconNewIndow from '$components/icons/IconNewIndow';
-	import IconMail from '$components/icons/IconMail';
+	import { base } from '$app/paths';
+	import NavItem from '$components/nav/NavItem.svelte';
+	import IconPlay from '$components/icons/IconPlay.svelte';
+	import IconNewWindow from '$components/icons/IconNewWindow.svelte';
+	import IconMail from '$components/icons/IconMail.svelte';
 </script>
 
 <ul>

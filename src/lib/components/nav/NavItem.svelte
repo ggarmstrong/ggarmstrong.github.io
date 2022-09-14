@@ -1,6 +1,5 @@
-<script>
+<script lang="ts">
 	import IconChevronRight from '$components/icons/IconChevronRight.svelte';
-
 	export let href: string;
 </script>
 

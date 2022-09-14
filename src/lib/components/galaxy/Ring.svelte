@@ -1,17 +1,17 @@
-<script>
-	export let orbits: number;
+<script lang="ts">
+	import Orbit from '$components/galaxy/Orbit.svelte';
+
+	export let index: number;
+	export let sizeHalf: number;
+	export let width: number;
+
+	const odd = index % 2 === 1;
+	const orbits = Math.pow(3, index);
+	const ringRadius = sizeHalf - width * index;
 </script>
 
 <g>
-	{#each Array(orbits) as _, index}
-		<Orbit {index} />
+	{#each Array(orbits) as _, orbitIndex}
+		<Orbit index={orbitIndex} {ringRadius} {orbits} {odd} />
 	{/each}
 </g>
-
-<style>
-	/* g:nth-of-type(odd) circle {
-		animation-direction: reverse;
-		animation-duration: 30s;
-		animation-delay: -10s;
-	} */
-</style>

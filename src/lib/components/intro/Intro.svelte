@@ -1,5 +1,9 @@
-<div class="intro">
-	<div class="intro-inner">
+<script>
+	import Author from '$components/intro/Author.svelte';
+</script>
+
+<div class="outer">
+	<div class="inner">
 		<p>
 			I have fun building software with smart and passionate people. It's my continuing goal to
 			improve the ui/ux quality of my work while also growing my full-stack capabilities. I enjoy
@@ -15,7 +19,7 @@
 </div>
 
 <style>
-	.intro {
+	.outer {
 		background: var(--theme-color-teal-800);
 		padding: var(--theme-padding);
 		flex: 1;
@@ -25,7 +29,7 @@
 		align-items: center;
 	}
 
-	.intro-inner {
+	.inner {
 		max-width: 640px;
 	}
 </style>

@@ -1,5 +1,9 @@
+<script>
+	import { base } from '$app/paths';
+</script>
+
 <div>
-	<img src="{base}/ggarmstrong-avatar.png" />
+	<img src="{base}/ggarmstrong-avatar.png" alt="Gene Armstrong - Software Developer" />
 </div>
 
 <style lang="scss">

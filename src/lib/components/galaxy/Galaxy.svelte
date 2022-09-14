@@ -1,11 +1,16 @@
 <script>
+	import Nucleus from '$components/galaxy/Nucleus.svelte';
+	import Rings from '$components/galaxy/Rings.svelte';
 	const size = 100;
+	const sizeHalf = size / 2;
+	// const rings = 5;
+	// const orbitWidth = sizeHalf / rings;
 </script>
 
 <div>
 	<svg viewBox="0 0 {size} {size}" preserveAspectRatio="xMidyMid slice">
 		<Nucleus />
-		<Rings />
+		<Rings {sizeHalf} />
 	</svg>
 </div>
 
