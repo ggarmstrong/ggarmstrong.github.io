@@ -3,10 +3,10 @@
 
 	export let sizeHalf: number;
 
-	const rings = 5;
+	const rings = 3;
 	const width = sizeHalf / rings;
 </script>
 
 {#each Array(rings) as _, index}
-	<Ring {index} {width} />
+	<Ring {sizeHalf} {index} {width} />
 {/each}

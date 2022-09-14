@@ -1,5 +1,5 @@
-<script>
-	import Orbit from '$components/galaxy/Orbit';
+<script lang="ts">
+	import Orbit from '$components/galaxy/Orbit.svelte';
 
 	const orbits = 5;
 	const radius = 5;
@@ -9,7 +9,7 @@
 </script>
 
 {#each Array(orbits) as _, index}
-	<Orbit {index} />
+	<Orbit {index} ringRadius={radius} />
 	<!-- <circle
 		cx="50"
 		cy="50"

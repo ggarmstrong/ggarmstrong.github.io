@@ -15,6 +15,7 @@
 		[1, 1],
 		[2, 0]
 	];
+	console.log('mango1', ringRadius, squareCoords.length, index);
 	const radius = ringRadius + squareCoords[index][0];
 	const strokeDashArray = (radius * 2 * Math.PI) / orbits;
 	const strokeDashOffset = squareCoords[index][1];
