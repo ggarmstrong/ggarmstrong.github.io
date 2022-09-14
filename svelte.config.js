@@ -12,7 +12,7 @@ const config = {
             assets: 'docs',
         }),
         paths: {
-            base: dev ? '' : '/ggarmstrong.github.io',
+            base: dev ? '' : '',
         },
 		alias: {
 			'$routes': './src/routes',
