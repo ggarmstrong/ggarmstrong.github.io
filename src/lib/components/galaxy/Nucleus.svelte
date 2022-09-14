@@ -1,6 +1,4 @@
 <script lang="ts">
-	import Orbit from '$components/galaxy/Orbit.svelte';
-
 	const orbits = 5;
 	const radius = 5;
 	const spacing = 1.25;
