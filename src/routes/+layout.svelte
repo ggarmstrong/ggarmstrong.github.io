@@ -1,12 +1,13 @@
 <script>
-	const ssr = false;
+	import { base } from '$app/paths';
+	export const prerender = true;
 </script>
 
 <svelte:head>
 	<title>Gene Armstrong - Software Developer</title>
-	<link rel="preload" href="/fonts/PPMori-Regular.woff2" />
-	<link rel="preload" href="/fonts/PPMori-SemiBold.woff2" />
-	<link rel="preload" href="/fonts/PPMori-RegularItalic.woff2" />
+	<link rel="preload" href="{base}/fonts/PPMori-Regular.woff2" />
+	<link rel="preload" href="{base}/fonts/PPMori-SemiBold.woff2" />
+	<link rel="preload" href="{base}/fonts/PPMori-RegularItalic.woff2" />
 </svelte:head>
 
 <main><slot /></main>
@@ -14,7 +15,7 @@
 <style type="scss">
 	@font-face {
 		font-family: 'PP Mori';
-		src: url('/fonts/PPMori-SemiBold.woff2') format('woff2');
+		src: url({base}/fonts/PPMori-SemiBold.woff2) format('woff2');
 		font-weight: bold;
 		font-style: normal;
 		font-display: swap;
@@ -22,7 +23,7 @@
 
 	@font-face {
 		font-family: 'PP Mori';
-		src: url('/fonts/PPMori-Regular.woff2') format('woff2');
+		src: url({base}/fonts/PPMori-Regular.woff2) format('woff2');
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
@@ -30,7 +31,7 @@
 
 	@font-face {
 		font-family: 'PP Mori';
-		src: url('/fonts/PPMori-RegularItalic.woff2') format('woff2');
+		src: url({base}/fonts/PPMori-RegularItalic.woff2) format('woff2');
 		font-weight: normal;
 		font-style: italic;
 		font-display: swap;

@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import IconChevronRight from '$components/IconChevronRight.svelte';
 	import IconMail from '$components/IconMail.svelte';
 	import IconPlay from '$components/IconPlay.svelte';
@@ -44,20 +45,20 @@
 					Software Dev
 				</div>
 				<div class="avatar">
-					<img src="/ggarmstrong-avatar.png" />
+					<img src="{base}/ggarmstrong-avatar.png" />
 				</div>
 			</address>
 		</div>
 	</div>
 	<ul>
 		<li>
-			<a href="/demos">
+			<a href="{base}/demos">
 				<span class="label"><span class="icon"><IconPlay /></span> See examples of my work</span
 				><IconChevronRight />
 			</a>
 		</li>
 		<li>
-			<a href="/gene-armstrong-resume-2022.pdf" target="_blank">
+			<a href="{base}/gene-armstrong-resume-2022.pdf" target="_blank">
 				<span class="label"><span class="icon"><IconNewWindow /></span> View my CV (PDF)</span
 				><IconChevronRight />
 			</a>

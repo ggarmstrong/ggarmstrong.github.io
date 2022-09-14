@@ -8,11 +8,11 @@ const config = {
 	preprocess: preprocess(),
 	kit: {
 		adapter: adapter({
-            pages: "docs",
-            assets: "docs"
+            pages: 'docs',
+            assets: 'docs',
         }),
         paths: {
-            base: dev ? "" : "/ggarmstrong.github.io",
+            base: dev ? '' : '/ggarmstrong.github.io',
         },
 		alias: {
 			'$routes': './src/routes',

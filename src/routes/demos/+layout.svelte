@@ -1,9 +1,10 @@
 <script>
+	import { base } from '$app/paths';
 	import IconArrowLeft from '$components/IconArrowLeft.svelte';
 </script>
 
 <section>
-	<a href="/" title="Go Back"><IconArrowLeft /></a>
+	<a href="{base}/" title="Go Back"><IconArrowLeft /></a>
 	<h1>Work Examples</h1>
 	<slot />
 </section>
