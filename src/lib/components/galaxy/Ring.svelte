@@ -9,9 +9,9 @@
 </g>
 
 <style>
-	g:nth-of-type(odd) circle {
+	/* g:nth-of-type(odd) circle {
 		animation-direction: reverse;
 		animation-duration: 30s;
 		animation-delay: -10s;
-	}
+	} */
 </style>

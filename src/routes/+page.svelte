@@ -1,135 +1,41 @@
 <script>
 	import { base } from '$app/paths';
-	import IconMail from '$components/icons/IconMail.svelte';
-	import IconPlay from '$components/icons/IconPlay.svelte';
-	import IconNewWindow from '$components/icons/IconNewWindow.svelte';
-	const numOrbits = 3;
-	const imageSize = 100;
-	const imageSizeHalf = imageSize / 2;
-	const orbitWidth = imageSizeHalf / numOrbits;
-	const maxMolecules = Math.pow(3, numOrbits);
-	const squareCoords = [
-		[-2, 0],
-		[-1, -1],
-		[-1, 1],
-		[0, -2],
-		[0, 0],
-		[0, 2],
-		[1, -1],
-		[1, 1],
-		[2, 0]
-	];
-	const centerOrbits = 5;
-	const centerRadius = 5;
-	const centerStrokeDashArray = (centerRadius * 2 * Math.PI) / 20;
+	import Intro from '$components/intro/Intro.svelte';
+	import Nav from '$components/nav/Nav.svelte';
+	import Galaxy from '$components/Galaxy/Galaxy.svelte';
+	// const numOrbits = 3;
+	// const imageSize = 100;
+	// const imageSizeHalf = imageSize / 2;
+	// const orbitWidth = imageSizeHalf / numOrbits;
+	// const maxMolecules = Math.pow(3, numOrbits);
+	// const squareCoords = [
+	// 	[-2, 0],
+	// 	[-1, -1],
+	// 	[-1, 1],
+	// 	[0, -2],
+	// 	[0, 0],
+	// 	[0, 2],
+	// 	[1, -1],
+	// 	[1, 1],
+	// 	[2, 0]
+	// ];
+	// const centerOrbits = 5;
+	// const centerRadius = 5;
+	// const centerStrokeDashArray = (centerRadius * 2 * Math.PI) / 20;
 </script>
 
-<div class="content">
-	<div class="intro">
-		<div class="intro-inner">
-			<p>
-				I have fun building software with smart and passionate people. It's my continuing goal to
-				improve the ui/ux quality of my work while also growing my full-stack capabilities. I enjoy
-				working through the interplay between dev theory and real-world business requirements.
-			</p>
-			<p>
-				I'm particularly interested in assembling, integrating, and evolving resilient
-				component-driven design systems. I'm inspired by leaders in this field, and I promote
-				design-system-first dev/testing workflows in order to help improve products and brands.
-			</p>
-			<address>
-				<div class="byline">
-					Gene Armstrong<br />
-					Software Dev
-				</div>
-				<div class="avatar">
-					<img src="{base}/ggarmstrong-avatar.png" />
-				</div>
-			</address>
-		</div>
-	</div>
-	<ul>
-		<li>
-			<a href="{base}/demos">
-				<span class="label"><span class="icon"><IconPlay /></span> See examples of my work</span
-				><IconChevronRight />
-			</a>
-		</li>
-		<li>
-			<a href="{base}/gene-armstrong-resume-2022.pdf" target="_blank">
-				<span class="label"><span class="icon"><IconNewWindow /></span> View my CV (PDF)</span
-				><IconChevronRight />
-			</a>
-		</li>
-		<li>
-			<a href="mailto:gene.armstrong.hello@gmail.com">
-				<span class="label"><span class="icon"><IconMail /></span> Get in touch with me</span
-				><IconChevronRight />
-			</a>
-		</li>
-	</ul>
+<div>
+	<Intro />
+	<Nav />
 </div>
 <Galaxy />
-		<!-- <Nucleus /> -->
-		{#each Array(numOrbits) as _, orbitIndex}
-			{@const numAtoms = Math.pow(3, orbitIndex)}
-			{@const numMolecules = maxMolecules / numAtoms}
-			{@const moleculeRadius = imageSizeHalf - orbitWidth * orbitIndex}
-			<g class="orbit-group">
-				{#each Array(numAtoms) as _, atomIndex}
-					{@const atomRadius = moleculeRadius + squareCoords[atomIndex][0]}
-					{@const strokeDashArray = (atomRadius * 2 * Math.PI) / numMolecules}
-					{@const strokeDashOffset = squareCoords[atomIndex][1]}
-					<circle
-						class="orbit"
-						cx="50"
-						cy="50"
-						r={atomRadius}
-						style:stroke-dasharray="0 {strokeDashArray}"
-						style:stroke-dashoffset={strokeDashOffset}
-					/>
-				{/each}
-			</g>
-		{/each}
-	</svg>
-	<!-- </div> -->
-</div>
 
-<style lang="scss">
-	@keyframes orbit {
-		from {
-			transform: rotate(0deg);
-		}
-		to {
-			transform: rotate(360deg);
-		}
-	}
-
-	.content {
+<style>
+	div {
 		position: relative;
 		display: flex;
 		flex-direction: column;
 		height: 100%;
 		min-width: 40%;
-	}
-
-	
-
-	.orbit {
-		transform-origin: 50% 50%;
-		animation-name: orbit;
-		animation-duration: 20s;
-		animation-iteration-count: infinite;
-		animation-timing-function: cubic-bezier(0.42, 0.2, 0.58, 0.8);
-		stroke: var(--theme-color-orange);
-		stroke-width: 1;
-		stroke-linecap: round;
-		fill: none;
-	}
-
-	.orbit-group:nth-of-type(odd) .orbit {
-		animation-direction: reverse;
-		animation-duration: 30s;
-		animation-delay: -10s;
 	}
 </style>

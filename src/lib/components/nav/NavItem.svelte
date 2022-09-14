@@ -1,7 +1,6 @@
 <script>
 	import IconChevronRight from '$components/icons/IconChevronRight.svelte';
 
-	export let label: string;
 	export let href: string;
 </script>
 
@@ -11,7 +10,7 @@
 			<span class="icon">
 				<slot name="icon" />
 			</span>
-			{label}
+			<slot />
 		</span>
 		<IconChevronRight />
 	</a>
