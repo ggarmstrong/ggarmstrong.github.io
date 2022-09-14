@@ -1,6 +1,6 @@
 <script>
 	import { base } from '$app/paths';
-	import IconArrowLeft from '$components/IconArrowLeft.svelte';
+	import IconArrowLeft from '$components/icons/IconArrowLeft.svelte';
 </script>
 
 <section>

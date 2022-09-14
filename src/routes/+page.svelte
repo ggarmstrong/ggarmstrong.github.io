@@ -1,16 +1,14 @@
 <script>
 	import { base } from '$app/paths';
-	import IconChevronRight from '$components/IconChevronRight.svelte';
-	import IconMail from '$components/IconMail.svelte';
-	import IconPlay from '$components/IconPlay.svelte';
-	import IconNewWindow from '$components/IconNewWindow.svelte';
+	import IconMail from '$components/icons/IconMail.svelte';
+	import IconPlay from '$components/icons/IconPlay.svelte';
+	import IconNewWindow from '$components/icons/IconNewWindow.svelte';
 	const numOrbits = 3;
 	const imageSize = 100;
 	const imageSizeHalf = imageSize / 2;
 	const orbitWidth = imageSizeHalf / numOrbits;
 	const maxMolecules = Math.pow(3, numOrbits);
-	const diamondTemp = [
-		// todo math
+	const squareCoords = [
 		[-2, 0],
 		[-1, -1],
 		[-1, 1],
@@ -89,9 +87,9 @@
 			{@const moleculeRadius = imageSizeHalf - orbitWidth * orbitIndex}
 			<g class="orbit-group">
 				{#each Array(numAtoms) as _, atomIndex}
-					{@const atomRadius = moleculeRadius + diamondTemp[atomIndex][0]}
+					{@const atomRadius = moleculeRadius + squareCoords[atomIndex][0]}
 					{@const strokeDashArray = (atomRadius * 2 * Math.PI) / numMolecules}
-					{@const strokeDashOffset = diamondTemp[atomIndex][1]}
+					{@const strokeDashOffset = squareCoords[atomIndex][1]}
 					<circle
 						class="orbit"
 						cx="50"
@@ -125,100 +123,9 @@
 		min-width: 40%;
 	}
 
-	.intro {
-		background: var(--theme-color-teal-800);
-		padding: var(--theme-padding);
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
 
-	.intro-inner {
-		max-width: 640px;
-	}
 
-	address {
-		display: flex;
-		justify-content: flex-end;
-		padding-top: 1.5rem;
-		padding-right: 0.5rem;
-		align-items: center;
-	}
-
-	.avatar {
-		width: 50px;
-		height: 50px;
-		border-radius: 100%;
-		overflow: hidden;
-		position: relative;
-
-		@media (min-width: 640px) {
-			width: 70px;
-			height: 70px;
-		}
-
-		img {
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-		}
-	}
-
-	.byline {
-		margin-right: 1.5rem;
-		line-height: 1.5;
-		text-align: right;
-	}
-
-	ul {
-		margin: 0;
-		padding: 0;
-		background: var(--theme-color-teal-900);
-		list-style: none;
-	}
-
-	li {
-		border-style: solid;
-		border-color: var(--theme-color-teal-500);
-		border-width: 0;
-		border-top-width: 1px;
-		width: 100%;
-		a {
-			display: flex;
-			text-decoration: none;
-			padding: 1.5rem var(--theme-padding) 1.25rem;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			line-height: 1;
-			max-width: 640px;
-			margin-left: auto;
-			margin-right: auto;
-			&:hover,
-			&:focus,
-			&:active {
-				text-decoration: underline;
-				outline: 0;
-			}
-		}
-		&:first-of-type {
-			border-top-width: 0;
-		}
-	}
-
-	.label {
-		display: flex;
-		align-items: center;
-	}
-
-	.icon {
-		margin-right: 0.75rem;
-	}
-
+	
 	.image {
 		position: relative;
 		overflow: hidden;
