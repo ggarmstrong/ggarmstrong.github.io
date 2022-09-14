@@ -38,7 +38,7 @@
 	}
 
 	:root {
-		min-height: 100vh;
+		height: 100vh;
 
 		--theme-color-orange-500: #c23816;
 		--theme-color-orange: var(--theme-color-orange-500);
