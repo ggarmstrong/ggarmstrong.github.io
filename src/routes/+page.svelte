@@ -35,7 +35,7 @@
 				working through the interplay between dev theory and real-world business requirements.
 			</p>
 			<p>
-				I'm particularly interested in assembling, integrating, and evolving resiliant
+				I'm particularly interested in assembling, integrating, and evolving resilient
 				component-driven design systems. I'm inspired by leaders in this field, and I promote
 				design-system-first dev/testing workflows in order to help improve products and brands.
 			</p>
