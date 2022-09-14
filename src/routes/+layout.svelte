@@ -1,4 +1,9 @@
+<script>
+	const ssr = false;
+</script>
+
 <svelte:head>
+	<title>Gene Armstrong - Software Developer</title>
 	<link rel="preload" href="/fonts/PPMori-Regular.woff2" />
 	<link rel="preload" href="/fonts/PPMori-SemiBold.woff2" />
 	<link rel="preload" href="/fonts/PPMori-RegularItalic.woff2" />
@@ -38,8 +43,7 @@
 		--theme-color-orange: var(--theme-color-orange-500);
 		--theme-color-teal-100: #d1e1df;
 		--theme-color-teal-300: #93b8b4;
-		--theme-color-teal-500: #042f2b;
-		--theme-color-teal-600: #052924;
+		--theme-color-teal-500: #052924;
 		--theme-color-teal-800: #021715;
 		--theme-color-teal-900: #000a07;
 		--theme-color-teal: var(--theme-color-teal-500);
@@ -54,7 +58,7 @@
 	:global(body) {
 		font-size: 1rem;
 		line-height: 1.5;
-		background: var(--theme-color-teal-600);
+		background: var(--theme-color-teal-500);
 		color: var(--theme-color-teal-300);
 		font-family: 'PP Mori', sans-serif;
 		margin: 0;

@@ -2,7 +2,7 @@
 	import IconChevronRight from '$components/IconChevronRight.svelte';
 	import IconMail from '$components/IconMail.svelte';
 	import IconPlay from '$components/IconPlay.svelte';
-	import IconDownload from '$components/IconDownload.svelte';
+	import IconNewWindow from '$components/IconNewWindow.svelte';
 	const numOrbits = 3;
 	const imageSize = 100;
 	const imageSizeHalf = imageSize / 2;
@@ -35,8 +35,8 @@
 			</p>
 			<p>
 				I'm particularly interested in assembling, integrating, and evolving resiliant
-				component-driven design systems. I'm inspired by leaders in this field, and promote
-				design-system-first dev and testing workflows to help improve products and brands.
+				component-driven design systems. I'm inspired by leaders in this field, and I promote
+				design-system-first dev/testing workflows in order to help improve products and brands.
 			</p>
 			<address>
 				<div class="byline">
@@ -57,8 +57,8 @@
 			</a>
 		</li>
 		<li>
-			<a href="#">
-				<span class="label"><span class="icon"><IconDownload /></span> Download my CV (PDF)</span
+			<a href="/gene-armstrong-resume-2022.pdf" target="_blank">
+				<span class="label"><span class="icon"><IconNewWindow /></span> View my CV (PDF)</span
 				><IconChevronRight />
 			</a>
 		</li>
@@ -188,7 +188,6 @@
 		width: 100%;
 		a {
 			display: flex;
-			// font-weight: bold;
 			text-decoration: none;
 			padding: 1.5rem var(--theme-padding) 1.25rem;
 			display: flex;
@@ -202,7 +201,7 @@
 			&:focus,
 			&:active {
 				text-decoration: underline;
-				outline: 0
+				outline: 0;
 			}
 		}
 		&:first-of-type {
