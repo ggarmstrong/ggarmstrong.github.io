@@ -3,6 +3,16 @@
 	import Intro from '$components/intro/Intro.svelte';
 	import Nav from '$components/nav/Nav.svelte';
 	import Galaxy from '$components/galaxy/Galaxy.svelte';
+
+	import { onMount } from 'svelte';
+	import { getStoryblokApi } from '@storyblok/svelte';
+
+	onMount(async () => {
+		const storyblokApi = getStoryblokApi();
+		const { data } = await storyblokApi.get('cdn/stories/home', {
+			version: 'draft'
+		});
+	});
 </script>
 
 <div>
